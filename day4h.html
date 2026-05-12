@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculate(){
+            let num1=parseFloat(document.getElementById("n1").value);
+            let num2=parseFloat(document.getElementById("n2").value);
+            let opera=document.getElementById("operator").value;
+            let result=0;
+            if(isNaN(num1)||isNaN(num2)){
+                
+            }
+            
+            if(opera==="+"){
+                result=num1+num2;
+            }
+            else if(opera==="-"){
+             result=num1-num2;
+            }
+            else if(opera==="*"){
+            result=num1*num2;
+            }
+            else if(opera==="/"){
+                if(num2==0){
+                        finalResult.innerText="Error:Can't divide by 0";
+                        return;
+                }
+             result=num1/num2;
+            }
+           
+
+            document.getElementById("result").innerText=result;
+        }
+    </script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 13px;
+
+    }
+    h1{
+        font-size: 20px;
+        text-align: center;
+        margin: 20px;
+    }
+    .container{
+        border:1px solid black;
+        margin: auto;
+        border-radius: 5px;
+        /* background-color: aqua; */
+        width: 400px;
+        height: 250px;
+        padding: 10px;
+        margin-top: 30px;
+        box-shadow:4px 4px 10px green;
+      
+        
+
+    }
+    #operator{
+        margin: 5px;
+        height:30px;
+    }
+   .aa{
+        height:30px;
+    }
+    button{
+        width: 90%;
+        margin:10px;
+        height: 30px;
+        background-color: rgb(17, 24, 151);
+        color:white;
+        border-radius: 5px;
+    }
+    .res{
+        width:90%;
+        height:30px;
+      
+        padding:10px;
+        margin-left: 10px;
+        border-radius: 5px;
+        
+        
+    }
+    .re{
+        text-align: right;
+        justify-content: right;
+    }
+    
+    .ab{
+        padding-left: 10px;
+    }
+</style>
+<body>
+   
+    <div class="container">
+    <h1 id="r">Mini Calculator</h1>
+    <div class="ab">
+        <input type="number" value="45" id="n1" class="aa">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" value="45" id="n2" class="aa">
+    </div>
+    <button onclick="calculate()" class="aa">Calculate Amount</button>
+    <div class="res">
+        <span>Result:</span>
+        <span class="re" id="result">0</span>
+    </div>
+    </div>
+/
+    
+</body>
+</html>
