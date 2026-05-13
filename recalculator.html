@@ -1,0 +1,151 @@
+<head>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    width: 100%;
+    height: 100vh;
+    background: #e3f9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .calculator {
+    background: #b5bbc3;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .calculator form input {
+    border: 0;
+    outline: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background: rgb(121, 174, 215);
+    font-size: 20px;
+    color: #736161;
+    cursor: pointer;
+    margin: 10px;
+  }
+  form .display {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+  }
+  form .display input {
+    text-align: right;
+    flex: 1;
+    font-size: 35px;
+    padding: 5px;
+    height: 50px;
+    width: 130px;
+  }
+  form input.equal {
+    width: 100%;
+    color: #b5bbc3;
+    background-color: #d63a3a;
+    padding-right: 10px;
+  }
+  form input.operator {
+    color: #bc5118;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="calculator">
+      <form>
+        <div class="display">
+          <input type="text" name="display" />
+        </div>
+
+        <div>
+          <input
+            type="button"
+            value="AC"
+            onclick="display.value = ''"
+            class="operator"
+          />
+
+          <input
+            type="button"
+            value="DE"
+            onclick="display.value = display.value.toString().slice(0, -1)"
+            class="operator"
+          />
+
+          <input
+            type="button"
+            value="%"
+            onclick="display.value = eval(display.value) / 100"
+          />
+
+          <input type="button" value="/" onclick="display.value += '/'" />
+        </div>
+
+        <div>
+          <input type="button" value="7" onclick="display.value += '7'" />
+
+          <input type="button" value="8" onclick="display.value += '8'" />
+
+          <input type="button" value="9" onclick="display.value += '9'" />
+
+          <input type="button" value="-" onclick="display.value += '-'" />
+        </div>
+
+        <div>
+          <input type="button" value="4" onclick="display.value += '4'" />
+
+          <input type="button" value="5" onclick="display.value += '5'" />
+
+          <input type="button" value="6" onclick="display.value += '6'" />
+
+          <input type="button" value="+" onclick="display.value += '+'" />
+        </div>
+
+        <div>
+          <input type="button" value="1" onclick="display.value += '1'" />
+
+          <input type="button" value="2" onclick="display.value += '2'" />
+
+          <input type="button" value="3" onclick="display.value += '3'" />
+
+          <input type="button" value="0" onclick="display.value += '0'" />
+        </div>
+        <div>
+          <input type="button" value="(" onclick="display.value += '('" />
+
+          <input type="button" value=")" onclick="display.value += ')'" />
+
+          <input
+            type="button"
+            value="."
+            onclick="if (!display.value.includes('.')) display.value += '.';"
+          />
+
+          <input type="button" value="*" onclick="display.value += '*'" />
+        </div>
+        <div>
+          <input
+            type="button"
+            value="="
+            onclick="
+              if (display.value == '') {
+                display.value = '';
+              } else if (eval(display.value) == Infinity) {
+                display.value = 'Error';
+              } else {
+                display.value = eval(display.value);
+              }
+            "
+            class="equal"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
