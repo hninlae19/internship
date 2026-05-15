@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live DOM Tail wind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="bg-gray-200 p-4 m-auto">
+      <h1 class="text-3xl font-bold p-4">CSS Utility Simulator</h1>
+      <p class="text-gray-600 p-4">
+        Change the inputs below to see how atomic classes combine to build UIs.
+      </p>
+      <nav
+        class="bg-blue-600 text-white p-4 lg:flex lg:items-center lg:justify-between"
+      >
+        <!-- Top Row -->
+        <div class="flex items-center justify-between">
+          <h2 class="font-bold text-xl">MyLogo</h2>
+
+          <!-- Mobile Button -->
+          <button class="lg:hidden text-3xl" onclick="showMenu()">☰</button>
+        </div>
+
+        <!-- Menu -->
+        <ul
+          id="menu"
+          class="hidden flex-col gap-4 mt-4 lg:flex lg:flex-row lg:items-center lg:gap-6 lg:mt-0"
+        >
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div
+        class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 mb-6"
+      >
+        <span class="bg-blue-500 text-white p-4 rounded-lg text-center"
+          >Feature1</span
+        >
+        <span class="bg-blue-500 text-white p-4 rounded-lg text-center"
+          >Feature2</span
+        >
+        <span class="bg-blue-500 text-white p-4 rounded-lg text-center"
+          >Feature3</span
+        >
+      </div>
+      <div>
+        <div
+          class="bg-black grid sm:grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg text-white"
+        >
+          <section class="bg-purple-500 rounded-lg gap-y-7 p-5">
+            <h1 class="font-bold text-white text-3xl my-2">Utility Controls</h1>
+            <div class="flex flex-col gap-4">
+              <label class="">Padding (Spacing)</label>
+              <select class="w-full h-8 my-2">
+                <option>Medium(p-8)</option>
+              </select>
+            </div>
+            <div class="">
+              <label class="">Background Theme(Colors)</label>
+              <select class="w-full h-8 my-2">
+                <option class="">Primary Blue</option>
+              </select>
+            </div>
+            <div class="">
+              <label>Text Size(Typography)</label>
+              <select class="w-full h-8 my-2">
+                <option>Large(text-x)</option>
+              </select>
+            </div>
+            <div class="">
+              <label class="">Corner Radius (Border)</label>
+              <select class="w-full h-8 my-2">
+                <option class="">Square(rounded-none)</option>
+              </select>
+            </div>
+            <div class="">
+              <label class="">Shadow(Depth)</label>
+              <select class="w-full h-8 my-2">
+                <option class="">Medium(Shadow-md)</option>
+              </select>
+            </div>
+          </section>
+
+          <div class="bg-slate-400 p-4 rounded">
+            <div class="bg-gray-700 rounded-lg p-10 align-center text-white">
+              <section
+                class="bg-blue-400 rounded-lg shadow-md md-3 p-3 text-justify"
+              >
+                <h1>Alex Walker</h1>
+                <p>
+                  Full-Stack Web Developer building awesome things with Taiwind
+                  CSS.Full-Stack Web Developer building awesome things with
+                  Taiwind CSS.
+                </p>
+              </section>
+            </div>
+            <section class="bg-pink-600 rounded w-full mt-5 p-4 text-justify">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi,
+              itaque soluta suscipit id nihil laudantium fugiat officia,
+              repellat dignissimos voluptas saepe neque deleniti, quibusdam
+              ipsam quaerat laboriosam earum reprehenderit sit vitae rerum
+              ratione assumenda nemo? Modi excepturi atque aspernatur velit.
+              Maiores saepe dignissimos nam illo, fugit praesentium consectetur
+              vitae explicabo?
+            </section>
+          </div>
+        </div>
+      </div>
+      <section>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 mt-4 text-white font-bold py-2 px-4 border border-blue-700 rounded-lg"
+        >
+          Submit
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 mt-4 text-white font-bold py-2 px-4 border border-blue-700 rounded-lg"
+        >
+          Read More!
+        </button>
+        <button
+          class="bg-white hover:bg-blue-500 mt-4 text-blue-700 hover:text-white font-bold py-2 px-4 border border-blue-500 rounded-lg"
+        >
+          Hover Me Slowly!
+        </button>
+      </section>
+    </div>
+    <script>
+      function showMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("hidden");
+        menu.classList.toggle("flex");
+      }
+    </script>
+  </body>
+</html>

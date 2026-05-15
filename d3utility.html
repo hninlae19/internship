@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utility</title>
+  </head>
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: beige;
+      padding: 30px;
+    }
+
+    .allauto {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    p {
+      font-size: 20px;
+      font-family:
+        "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    }
+
+    .nav {
+      background-color: rgb(21, 21, 20);
+      display: flex;
+      justify-content: space-between;
+      padding: 3px;
+    }
+
+    h1 {
+      font-family:
+        "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    }
+
+    h2 {
+      color: aliceblue;
+      padding-left: 8px;
+    }
+
+    a {
+      text-decoration: none;
+      margin-left: 20px;
+      color: white;
+      padding-top: 5px;
+      padding-right: 5px;
+    }
+
+    .feature {
+      margin-top: 10px;
+      display: flex;
+      gap: 20px;
+      padding: 10px;
+      margin-bottom: 25px;
+    }
+
+    span {
+      width: 300px;
+      background-color: rgb(112, 210, 210);
+      text-align: center;
+      padding: 15px;
+      border-radius: 2px;
+      margin-left: 25px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .left-side {
+      width: 50%;
+      padding: 10px;
+      background-color: rgb(228, 228, 235);
+      border-radius: 5px;
+    }
+
+    .right-side {
+      height: 150px;
+      margin-top: 20%;
+      /* border:3px solid green; */
+      background-color: rgb(55, 43, 138);
+      border-radius: 5px;
+      color: aliceblue;
+      text-align: justify;
+      padding: 10px;
+    }
+
+    .walk {
+      background-color: rgb(209, 191, 191);
+      /* padding: 30px; */
+      text-align: center;
+      border-radius: 5px;
+      width: 50%;
+      display: flex;
+      padding: 0px 20px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .opt label {
+      display: block;
+      margin-bottom: 6px;
+      padding-left: 10px;
+    }
+
+    .opt select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid greenyellow;
+      border-radius: 4px;
+      background-color: rgb(169, 194, 218);
+    }
+
+    button {
+      margin: 20px;
+      background-color: rgb(96, 57, 214);
+      width: 150px;
+      height: 50px;
+      border: 2px solid greenyellow;
+      border-radius: 5px;
+    }
+  </style>
+
+  <body>
+    <div class="allauto">
+      <h1>CSS Utility Simulator</h1>
+      <p>
+        Change the inputs below to see how atomic classes combine to build UIs.
+      </p>
+      <div class="nav">
+        <h2>MyLogo</h2>
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div class="feature">
+        <span>Feature1</span>
+        <span>Feature2</span>
+        <span>Feature3</span>
+      </div>
+      <div class="container">
+        <section class="left-side">
+          <h1>Utility Controls</h1>
+          <div class="opt">
+            <label>Padding (Spacing)</label>
+            <select>
+              <option>Medium(p-8)</option>
+            </select>
+          </div>
+          <div class="opt">
+            <label>Background Theme(Colors)</label>
+            <select>
+              <option>Primary Blue</option>
+            </select>
+          </div>
+          <div class="opt">
+            <label>Text Size(Typography)</label>
+            <select>
+              <option>Large(text-x)</option>
+            </select>
+          </div>
+          <div class="opt">
+            <label>Corner Radius (Border)</label>
+            <select>
+              <option>Square(rounded-none)</option>
+            </select>
+          </div>
+          <div class="opt">
+            <label>Shadow(Depth)</label>
+            <select>
+              <option>Medium(Shadow-md)</option>
+            </select>
+          </div>
+        </section>
+        <div class="walk">
+          <section class="right-side">
+            <h1>Alex Walker</h1>
+            <p>
+              Full-Stack Web Developer building awesome things with Taiwind
+              CSS.Full-Stack Web Developer building awesome things with Taiwind
+              CSS.
+            </p>
+          </section>
+        </div>
+      </div>
+      <section>
+        <button>Submit</button>
+        <button>Hover Me Slowly!</button>
+      </section>
+    </div>
+  </body>
+</html>

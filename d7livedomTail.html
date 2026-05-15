@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live DOM Output</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-green-100 flex justify-center items-center min-h-screen">
+    <div class="bg-gray-700 rounded-lg">
+      <div class="p-8 shadow-lg w-[800px] flex gap-10">
+        <!-- Left Side -->
+        <div class="w-1/2">
+          <h2 class="text-2xl font-bold mb-6 text-purple-600">
+            Update Variables
+          </h2>
+
+          <!-- Name -->
+          <div class="mb-4 text-blue-700">
+            <label class="font-semibold block mb-1"> Name (String): </label>
+
+            <input
+              type="text"
+              id="nameInput"
+              value="Alex Walker"
+              class="w-full border rounded px-3 py-2"
+            />
+          </div>
+
+          <!-- Age -->
+          <div class="mb-4 text-blue-700">
+            <label class="font-semibold block mb-1"> Age (Number): </label>
+
+            <input
+              type="number"
+              id="ageInput"
+              value="28"
+              class="w-full border rounded px-3 py-2"
+            />
+          </div>
+
+          <!-- VIP -->
+          <div class="mb-4 text-blue-700">
+            <label class="font-semibold block mb-2">
+              VIP Status (Boolean):
+            </label>
+
+            <input type="checkbox" id="vipInput" checked />
+          </div>
+
+          <!-- Color -->
+          <div class="text-blue-700">
+            <label class="font-semibold block mb-2"> Card Color: </label>
+
+            <input type="color" id="colorInput" value="#fa3434" />
+          </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="w-1/2">
+          <h2 class="text-2xl font-bold mb-6 text-purple-600">
+            Live DOM Output
+          </h2>
+
+          <div
+            id="card"
+            class="border rounded-xl shadow-md p-5 w-64 border-black-700 border mb-2"
+          >
+            <span
+              id="vipBadge"
+              class="text-xs px-2 py-1 rounded-full font-bold bg-red-500 text-white border-gray-300 border mb-2"
+            >
+              VIP MEMBER
+            </span>
+
+            <h3 id="displayName" class="text-xl font-bold mt-4 text-yellow-500">
+              Alex Walker
+            </h3>
+
+            <p id="displayAge" class="mt-2 text-gray-700 text-yellow-500">
+              Age: 28
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-center p-4 rounded-lg text-puple-400 text-bold bg-gray-500"
+      >
+        Next Container
+      </div>
+    </div>
+    <script>
+      const nameInput = document.getElementById("nameInput");
+      const ageInput = document.getElementById("ageInput");
+      const vipInput = document.getElementById("vipInput");
+      const colorInput = document.getElementById("colorInput");
+
+      const displayName = document.getElementById("displayName");
+      const displayAge = document.getElementById("displayAge");
+      const vipBadge = document.getElementById("vipBadge");
+      const card = document.getElementById("card");
+
+      function updateCard() {
+        // Name
+        displayName.innerText = nameInput.value;
+
+        // Age
+        displayAge.innerText = "Age: " + ageInput.value;
+
+        // VIP
+        if (vipInput.checked) {
+          vipBadge.style.display = "inline-block";
+        } else {
+          vipBadge.style.display = "none";
+        }
+
+        // Color
+        card.style.backgroundColor = colorInput.value;
+      }
+
+      nameInput.addEventListener("input", updateCard);
+      ageInput.addEventListener("input", updateCard);
+      vipInput.addEventListener("change", updateCard);
+      colorInput.addEventListener("input", updateCard);
+    </script>
+  </body>
+</html>

@@ -133,6 +133,12 @@
 
   <script>
     let display = document.getElementById("display");
+    function autoMultiply(exp) {
+      exp = exp.replace(/\)\(/g, ")*(");
+      exp = exp.replace(/(\d)\(/g, "$1*(");
+      exp = exp.replace(/\)(\d)/g, ")*$1");
+      return exp;
+    }
 
     function add(value) {
       let last = display.value.slice(-1);
@@ -172,10 +178,17 @@
     function answer() {
       if (display.value == "") {
         display.value = "";
-      } else if (eval(display.value) == Infinity) {
-        display.value = "";
       } else {
-        display.value = eval(display.value);
+        let value = autoMultiply(display.value);
+        try {
+          if (eval(value) == Infinity) {
+            display.value = "0";
+          } else {
+            display.value = eval(value);
+          }
+        } catch {
+          display.value = "Error";
+        }
       }
     }
   </script>
